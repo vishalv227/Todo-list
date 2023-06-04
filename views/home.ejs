@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+        
+
+        input{
+            background-color: ghostwhite;
+        }
+        select{
+            background-color: ghostwhite;
+        }
+      
+      .no-outline{
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: hidden;
+        width: 95%;
+      }
+      
+      .no-outline:focus {
+        outline: none;
+      }
+      
+      #outer-box{
+        border: 2px solid grey;
+        border-radius: 5px;
+        margin: auto;
+        width: 550px;
+        position: relative;
+        background-color: ghostwhite;
+        box-shadow: 0px 0px 20px grey;
+        /* background-color: yellow; */
+      }
+      #header{
+        /* border: 2px solid black; */
+        text-align: center;
+        font-size: 35px;
+        text-shadow: 1.5px 1.5px 2px grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      form{
+        margin: 5px;
+      }
+      .firstrow{
+        border: 1px solid black;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        /* border-color: grey; */
+        border-color: rgb(201, 200, 200);
+        padding: 23px;
+        padding-bottom: 10px;
+        margin-top: 10px;
+        font-family: cursive;
+      }
+      .categoryAndDate{
+        border: 1px solid black;
+        border-left: none;
+        border-right: none;
+        /* border-color: grey; */
+        border-color: rgb(201, 200, 200);
+        display: flex;
+        padding: 23px;
+        margin-bottom: 20px;
+        padding-top: 15px;
+        font-family: cursive;
+      }
+      #category{
+        /* border: 2px solid black; */
+        width: 50%;
+      }
+      #date{
+        width: 50%;
+        /* border: 2px solid black; */
+      }
+      select{
+        width: 90%;
+        border: none;
+        margin-left: -2px;
+      }
+      .buttons{
+        display: flex;
+        justify-content: center;
+        /* padding: 20px; */
+        padding-bottom: 10px;
+        margin-bottom: 9px;
+        /* border: 2px solid black; */
+      }
+      .both-btn{
+        width: 125px;
+        margin: 2.5px;
+        height: 50px;
+        font-size: 12px;
+        margin-top: 7px;
+        font-weight: bolder;
+        color: white;
+        border-radius: 3px;
+        text-shadow: 1px 1px 2px black;
+      }
+      #add-btn{
+        background-color: purple;
+        border: none;
+        font-size: 14px;
+      }
+      #dlt-btn{
+        
+        background-color: red;
+        border: none;
+      }
+      #add-btn:hover{
+        background-color: rgb(104, 0, 104);
+      }
+      #dlt-btn:hover{
+        background-color: rgb(209, 0, 0);
+      }
+      .display-row-out{
+        /* border: 2px solid black; */
+        border: 1px solid black;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        border-color: rgb(201, 200, 200);;
+        padding: 10px;
+      }
+
+      .display-row-mid{
+        display: inline-block;
+        /* border: 2px solid black; */
+        width: 94%;
+        height: 60px;
+      }
+      .for-desc-and-date{
+        height: 100%;
+        width: 60%;
+        margin-left: 5px;
+        
+      }
+      
+      .for-description{
+        height: 50%;
+        font-size: 18px;
+      }
+      .for-category{
+        height: 58%;
+        width: 17%;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+      }
+      .the-categories{
+        width: 100%;
+        color: white;
+        text-shadow: 1.5px 1.5px 2.5px black;
+      }
+      span{
+        color: rgb(66, 66, 66);
+      }
+      .for-date{
+        height: 50%;
+        font-size: 12px;
+        color: rgb(66, 66, 66);
+        /* color: rgb(84, 109, 84); */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .adjust-all{
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      
+    </style>
+    <script src="https://kit.fontawesome.com/529bcad516.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="outer-box">
+        <div id="header">TODO App</div>
+        <form action="/create-task" method="post">
+            <div class="firstrow">
+                <label>
+                    DESCRIPTION
+                    <br>
+                    <input type="text" name="description" placeholder="Enter Your task" class="no-outline">
+                </label>
+            </div>
+            <div class="categoryAndDate">
+                <div id="category">
+                    <label>
+                        CATEGORY
+                        <br>
+                        <select id="diff-cat" name="category" placeholder="Choose a Category" class="no-outline">
+                            <option value="">Choose a category</option> <!--I am not getting how to make this font lighter-->
+                            <option value="Home">Home</option>
+                            <option value="School">School</option>
+                            <option value="Work">Work</option>
+                            <option value="Office">Office</option>
+                            <option value="Other">Other</option>
+                          </select>
+                    </label>
+                </div>
+                <div id="date">
+                    <label>
+                        DUE DATE
+                        <br>
+                        <input type="date" name="date" class="no-outline">
+                    </label>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="both-btn" id="add-btn" type="submit" class="textShadow"><i class="fa-solid fa-plus"></i>&nbsp ADD TASKS</button>
+                <button formaction="/delete-task" class="both-btn" id="dlt-btn" type="submit"><i class="fa-solid fa-trash"></i>&nbsp DELETE TASKS</button>
+            </div>
+
+            <% for(let i of data){ %>
+                <div class="display-row-out">
+                    <label for="">
+                        <!-- <%=i.description%>
+                        <%=i.category%>
+                        <%=i.date%> -->
+                        <input type="checkbox" name="check" value="<%=i._id%>">
+                        <div class="display-row-mid">
+                            <div class="adjust-all">
+                                <div class="for-desc-and-date">
+                                    <div class="for-description"><%=i.description%></div>
+                                    <span><i class="fa-solid fa-calendar-days"></i></span>
+                                    <div class="for-date" get-date="<%=i.date%>"><i class="fa-solid fa-calendar-days"></i>&nbsp<%=i.date%></div>
+                                </div>
+                                <div class="for-category">
+                                    <div all-categories="<%=i.category%>" class="the-categories"><%=i.category%></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </label>
+                </div> 
+    
+            <% } %>
+
+        </form>
+    </div>
+
+    <script>
+      
+        
+        let el1 = document.getElementsByClassName('the-categories');
+        let el2 = document.getElementsByClassName('for-category');
+        // console.log(el);
+        for(let i=0; i<el1.length; i++){
+            let category = el1[i].getAttribute('all-categories');
+            if(category=="Other"){
+                el1[i].style.backgroundColor = "orange";
+                el2[i].style.backgroundColor = "orange";
+            }else if(category=="Home"){
+                el1[i].style.backgroundColor = "blue";
+                el2[i].style.backgroundColor = "blue";
+            }else if(category=="School"){
+                el1[i].style.backgroundColor = "green";
+                el2[i].style.backgroundColor = "green";
+            }else if(category=="Work"){
+                el1[i].style.backgroundColor = "brown";
+                el2[i].style.backgroundColor = "brown";
+            }else{
+                el1[i].style.backgroundColor = "#2F4F4F";
+                el2[i].style.backgroundColor = "#2F4F4F";
+            }
+        }
+        // console.log(el[0].getAttribute('all-categories'));
+        let forDate = document.getElementsByClassName('for-date');
+        for(let i=0; i<forDate.length; i++){
+            let dateString = forDate[i].getAttribute('get-date');
+            let count = 4;
+            let req = "";
+            for(let j=0; j<dateString.length && count; j++){
+                req = req + dateString[j];
+                if(dateString[j]==' ') count--;
+            }
+            forDate[i].innerHTML = req;
+            console.log(req);
+        }
+
+    </script>
+    
+</body>
+</html>
