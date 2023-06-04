@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); //mongoose is the ODM which eases the interaction with the mongodb
 
 mongoose.connect('mongodb://localhost/info_list_db');
 
