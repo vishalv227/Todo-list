@@ -3,11 +3,11 @@ const router = require('./routes');
 const app = express();
 const port = 8000;
 
-const db = require('./config/mongoose');
+// const db = require('./config/mongoose');
 
 
 //Use express router
-app.use(express.urlencoded()); //this is the middle ware, which decodes the data the form is sending (Use is used for middleware)
+app.use(express.urlencoded()); //this is the middle ware, which decodes the data the form is sending (Use is used for middleware) also known as parser
 app.use('/', require('./routes'));
 
 app.set('view engine', 'ejs'); //setting um embedded js as a view engine
